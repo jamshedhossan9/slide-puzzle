@@ -12,10 +12,11 @@ body{
     display: flex;
     flex-direction: column;
     width: 100%;
-    max-width: 320px;
+    max-width: 340px;
     min-height: 100vh;
     align-items: center;
     justify-content: center;
+    padding: 0 10px;
 }
 .container{
     position: relative;
@@ -153,6 +154,7 @@ body{
     justify-content: center;
     color: #000;
     text-decoration: none;
+    padding: 5px;
 }
 .a{border:1px solid #000;}
 .inline-block{
