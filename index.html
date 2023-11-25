@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Slide Puzzle</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="puzzle.css">
+	</head>
+	<body>
+		<div class="extra_style"></div>
+        <div class="container-wrapper">
+            <div class="container">
+                <div class="shadow">
+                    <div class="line-1"></div>
+                    <div class="line-2"></div>
+                    <div class="line-3"></div>
+                    <div class="line-4"></div>
+                </div>
+                <div class="stats">
+                    <div class="item timer">
+                        Time: <span class="timer_count">00:00:00</span>
+                    </div>
+                    <div class="item moves">
+                        Moves: <span class="total_move_count">0</span>
+                    </div>
+                </div>
+                <div class="" style="padding: 0px 0;">
+                    <div class="full-width v-100">
+                        <div class="main_puzzle_box_con h-100">
+                            
+                            <div class="puzzle_box h-100" data-figure="3"></div>
+                            <div class="solved_banner">
+                                <div class="solved_title_con">
+                                    <div class="solved_title">SOLVED</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="start_options h-100 hidden">
+                            <a class="start_puzzle_size btn" href="#" data-size="3"><span>3 x 3</span></a>
+                            <a class="start_puzzle_size btn" href="#" data-size="4"><span>4 x 4</span></a>
+                            <a class="start_puzzle_size btn" href="#" data-size="5"><span>5 x 5</span></a>
+                            <a class="start_puzzle_size btn" href="#" data-size="6"><span>6 x 6</span></a>
+                            <a class="start_puzzle_size btn" href="#" data-size="7"><span>7 x 7</span></a>
+                            <a class="start_puzzle_size btn" href="#" data-size="8"><span>8 x 8</span></a>
+                            <a class="start_puzzle_size btn" href="#" data-size="9"><span>9 x 9</span></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tools">
+                    <a href="#" class="btn start-btn">Start</a>
+                    <a href="#" class="btn reset_puzzle_btn">Reset</a>
+                    <a href="#" class="btn check_puzzle_image">Show</a>
+                    <div class="btn btn-block btn-file" >
+                        Browse Image
+                        <input type="file" class="puzzle_image_browse" style="display:inline-block">
+                    </div>
+                </div>
+            </div>
+            <div class="contact"><a href="mailto:jamshedhossan9@gmail.com">jamshedhossan9@gmail.com</a></div>
+        </div>
+	</body>
+	<script src="assets/jquery.min.js"></script>
+	<script src="puzzle.js?v1"></script>
+</html>
