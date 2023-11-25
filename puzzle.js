@@ -15,6 +15,7 @@ var play_puzzle = (function(){
     var start_options = $('.start_options');
     var start_options_open = false;
 
+    var playTimeInterval = 0;
 	var total_move_count = 0, playTime = 0, playing = false;
 
 	var style = $('<style>'+
@@ -30,6 +31,7 @@ var play_puzzle = (function(){
 		total_move_count = 0;
         playTime = 0;
         playing = false;
+        clearInterval(playTimeInterval);
         show_main_puzzle_box_con();
         timeToString();
 	};
@@ -390,15 +392,17 @@ var play_puzzle = (function(){
 		puzzle_box.append(boxHtml);
         playing = true;
         playTime = 0;
-        var playTimeInterval = setInterval(function(){
+        playTimeInterval = setInterval(function(){
             if(!playing){
                 clearInterval(playTimeInterval)
+                // console.log(playTimeInterval)
             }
             else{
                 playTime += 1;
                 timeToString();
             }
         }, 1000);
+        // console.log(playTimeInterval)
 		if(typeof obj.callback === "function"){
 			obj.callback();
 		}

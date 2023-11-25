@@ -8,7 +8,7 @@ body{
     font-size: 16px;
 }
 .container-wrapper{
-    margin: 20px auto;
+    margin: 0px auto;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -16,7 +16,7 @@ body{
     min-height: 100vh;
     align-items: center;
     justify-content: center;
-    padding: 0 10px;
+    padding: 10px;
 }
 .container{
     position: relative;
@@ -330,7 +330,7 @@ body{
 .contact{
     width: 100%;
     text-align: center;
-    padding: 10px;
+    padding: 10px 10px 0px 10px;
 }
 .contact a{
     color: #2d5e85;
