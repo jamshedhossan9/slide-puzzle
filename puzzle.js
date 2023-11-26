@@ -5,7 +5,7 @@ var play_puzzle = (function(){
 	var default_image = 'puzzle.jpg';
 	var puzzle_box_cls = '.puzzle_box';
 	var puzzle_box = $(puzzle_box_cls);
-	var start_puzzle = $('.start_puzzle');
+	var start_puzzle = $('.start-btn');
 	var start_puzzle_size = $('.start_puzzle_size');
 	var reset_puzzle_btn = $('.reset_puzzle_btn');
 	var check_puzzle_image = $('.check_puzzle_image');
@@ -26,15 +26,31 @@ var play_puzzle = (function(){
 
 	var reset_puzzle = function(){
 		puzzle_box.removeClass('started_puzzle').removeClass('solved');
+        solved_banner.removeClass('show');
 		puzzle_box.html('');
 		total_move.html('0');
 		total_move_count = 0;
         playTime = 0;
-        playing = false;
+        isPlaying(false);
         clearInterval(playTimeInterval);
         show_main_puzzle_box_con();
         timeToString();
 	};
+
+    var isPlaying = function(value){
+        playing = value;
+        if(playing){
+            check_puzzle_image.show();
+            start_puzzle.hide();
+            reset_puzzle_btn.show();
+        }
+        else{
+            check_puzzle_image.hide();
+            start_puzzle.show();
+            reset_puzzle_btn.hide();
+        }
+    }
+    isPlaying(false);
 
     var show_start_options = function(){
         if(start_options_open){
@@ -206,8 +222,8 @@ var play_puzzle = (function(){
 	    	if(a_str ==  firstMatrix.string()){
 	    		puzzle_box.addClass('solved');
 	    		solved_banner.addClass('show');
-                playing = false;
-	    		setTimeout(function(){solved_banner.removeClass('show');},3000);
+                isPlaying(false);
+	    		// setTimeout(function(){solved_banner.removeClass('show');},3000);
 	    	}
 	    });
 	    var change_position = (function(a,b){
@@ -390,7 +406,7 @@ var play_puzzle = (function(){
 		var boxHtml = startHtmlContent.join('');
 		puzzle_box.html('');
 		puzzle_box.append(boxHtml);
-        playing = true;
+        isPlaying(true);
         playTime = 0;
         playTimeInterval = setInterval(function(){
             if(!playing){
@@ -442,7 +458,7 @@ var play_puzzle = (function(){
 		}
 	});
 
-	start_puzzle_size.click(function(event){
+	start_puzzle_size.on('click', function(event){
 		event.preventDefault();
 		var element = $(this);
 
@@ -460,11 +476,11 @@ var play_puzzle = (function(){
 		}
 	});
 
-	reset_puzzle_btn.click(function(event){
+	reset_puzzle_btn.on('click', function(event){
 		reset_puzzle();
 	});
 
-	check_puzzle_image.click(function(event){
+	check_puzzle_image.on('click', function(event){
 		event.preventDefault();
 		var element = $(this);
 		if(element.hasClass('open')){
@@ -479,7 +495,7 @@ var play_puzzle = (function(){
 		}
 	});
 
-    $('.start-btn').click(function(event){
+    start_puzzle.on('click', function(event){
         event.preventDefault();
         show_start_options();
     })

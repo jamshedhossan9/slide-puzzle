@@ -290,6 +290,7 @@ body{
 	z-index: 100;
 	opacity: 0;
 	visibility: hidden;
+    transition: .3s ease-in;
 
     display: flex;
     justify-content: center;
@@ -318,10 +319,12 @@ body{
 }
 
 .solved_banner.show{
-	animation-name: sloved_animation;
+    opacity: .8;
+	visibility: visible;
+	/* animation-name: sloved_animation;
 	animation-duration:3s;
 	animaion-timing-function:ease-in-out;
-	animation-iteration-count:1;
+	animation-iteration-count:1; */
 
 }
 
