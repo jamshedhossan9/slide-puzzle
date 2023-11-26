@@ -340,4 +340,11 @@ body{
 .contact a{
     color: #253b4d;
     font-size: 85%;
+    letter-spacing: 1px;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    padding: 1px 5px;
+}
+.contact a:hover{
+    border-bottom: 1px solid #253b4d;
 }
